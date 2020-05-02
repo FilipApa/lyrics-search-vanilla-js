@@ -22,15 +22,34 @@ async function searchSongs(input) {
   const res = await fetch(`${url}/suggest/${input}`);
   const data = await res.json();
 
-  displayDataToDOM(data);
-  search.value = "";
+  try {
+    while (results.firstChild) {
+      results.removeChild(results.firstChild);
+    }
+    displayDataToDOM(data);
+    search.value = "";
+  } catch (error) {
+    errorMsg.innerText = "There are no more avalible lyrics for this song";
+    errorMsg.style.display = "block";
+    setTimeout(() => {
+      errorMsg.style.display = "none";
+    }, 6000);
+  }
 }
 
 async function loadMoreSongs() {
-  const resNext = await fetch(`${proxy}/${nextData}`);
-  const dataNext = await resNext.json();
+  try {
+    const resNext = await fetch(`${proxy}/${nextData}`);
+    const dataNext = await resNext.json();
 
-  displayDataToDOM(dataNext);
+    displayDataToDOM(dataNext);
+  } catch (error) {
+    errorMsg.innerText = "There are no more avalible lyrics for this song";
+    errorMsg.style.display = "block";
+    setTimeout(() => {
+      errorMsg.style.display = "none";
+    }, 6000);
+  }
 }
 
 async function getLyrics(
