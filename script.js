@@ -198,8 +198,11 @@ audio.addEventListener("timeupdate", updateProgress);
 
 progressContainer.addEventListener("click", setProgress);
 
-closeBtn.addEventListener("click", () => {
+closeBtn.addEventListener("click", (e) => {
+  audio.pause();
+  audio.currentTime = 0;
   modal.classList.remove("show");
+ 
 });
 
 window.addEventListener("click", (e) => {
