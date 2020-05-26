@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/FilipApa/search-lyrics-app-js/issues"
   },
-  "homepage": "https://github.com/FilipApa/search-lyrics-app-js#readme",
+  "homepage": "https://github.com/FilipApa/search-lyrics-app-js/",
   "devDependencies": {
     "gh-pages": "^2.2.0"
   }
