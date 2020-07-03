@@ -134,10 +134,11 @@ function showLoading() {
 }
 
 function toggleAudioStatus() {
-  audio.setAttribute('crossorigin', 'anonymous');
+  audio.crossOrigin = 'anonymous'
   if (audio.paused) {
     playBtn.querySelector("i.fas").classList.remove("fa-play");
     playBtn.querySelector("i.fas").classList.add("fa-pause");
+    
     audio.play();
   } else {
     audio.pause();
