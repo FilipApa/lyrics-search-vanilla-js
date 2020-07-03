@@ -206,10 +206,6 @@ closeBtn.addEventListener("click", (e) => {
  
 });
 
-window.addEventListener("click", (e) => {
-  e.target === modal ? modal.classList.remove("show") : false;
-});
-
 window.addEventListener("scroll", () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
