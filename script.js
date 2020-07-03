@@ -64,7 +64,7 @@ async function getLyrics(
   const data = await res.json();
   try {
     const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, "<br>");
-    audio.setAttribute("src", songPreview);
+    audio.setAttribute("src", `${proxy}/${songPreview}`);
 
     audioDetails.innerHTML = `
       <div class="artist-cover-wrap">
