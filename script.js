@@ -134,6 +134,7 @@ function showLoading() {
 }
 
 function toggleAudioStatus() {
+  audio.setAttribute('crossorigin', 'anonymous');
   if (audio.paused) {
     playBtn.querySelector("i.fas").classList.remove("fa-play");
     playBtn.querySelector("i.fas").classList.add("fa-pause");
